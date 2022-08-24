@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "Youtube extension",
+	"version": "1.0",
+	"description": "Display duration of youtube playlist",
+    "icons": {"128": "icon128.png"},
+	"content_scripts": [
+		{
+			"run_at": "document_end",
+			"matches": [
+				"https://www.youtube.com/playlist?list=*",
+				"https://www.youtube.com/watch?*&list=*"
+			],
+			"js": [
+				"content.js"
+			]
+		}
+		
+	],
+	"background": {
+		"scripts":["background.js"]
+	},
+	"browser_action": {
+	}	
+
+}
